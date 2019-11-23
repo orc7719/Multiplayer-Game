@@ -10,12 +10,16 @@ public class NetworkPlayerController : NetworkBehaviour
     [SerializeField] float gravity = 12;
 
     CharacterController charController;
+    [SerializeField] Animator anim;
 
     float yVelocity;
+    Vector3 playerVelocity;
+    Vector3 previousPos;
 
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        previousPos = transform.position;
     }
 
     void Update()
@@ -31,7 +35,12 @@ public class NetworkPlayerController : NetworkBehaviour
 
     void DoAnimation()
     {
+        Vector3 charVelocity = transform.InverseTransformDirection((transform.position - previousPos) / Time.deltaTime);
+        previousPos = transform.position;
+        playerVelocity = Vector3.Lerp(playerVelocity, charVelocity, 10 * Time.deltaTime);
 
+        anim.SetFloat("MoveX", playerVelocity.x);
+        anim.SetFloat("MoveZ", playerVelocity.z);
     }
 
     void DoInteraction()
@@ -48,8 +57,8 @@ public class NetworkPlayerController : NetworkBehaviour
         move = transform.TransformDirection(move);
         move *= moveSpeed;
 
-        if (h != 0 && v != 0)
-            move *= 0.7f;
+        //if (h != 0 && v != 0)
+        //    move *= 0.7f;
 
         if(charController.isGrounded)
         {

@@ -13,7 +13,7 @@ public class NetworkPlayerController : NetworkBehaviour
     [SerializeField] Animator anim;
 
     float yVelocity;
-    Vector3 playerVelocity;
+    public Vector3 playerVelocity;
     Vector3 previousPos;
 
     void Start()

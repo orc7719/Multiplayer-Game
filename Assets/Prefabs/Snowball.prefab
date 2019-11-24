@@ -90,6 +90,8 @@ GameObject:
   - component: {fileID: -8839841429765031280}
   - component: {fileID: -7706299720323381911}
   - component: {fileID: 833136389291938841}
+  - component: {fileID: -8772794392608802675}
+  - component: {fileID: -6419134469875063291}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Untagged
@@ -125,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverOnly: 0
-  m_AssetId: 936d1724d22dc80478ae1110ba361437
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 3641404030
 --- !u!54 &-7706299720323381911
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,7 +144,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!135 &833136389291938841
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -156,3 +158,32 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.06
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8772794392608802675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074762548910340812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0
+  compressRotation: 1
+--- !u!114 &-6419134469875063291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074762548910340812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e6e2261962150459fdeb792998ebce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 991292229370205204, guid: 773352e6d2830cb41b99b4e6d4b463c2,
+    type: 3}

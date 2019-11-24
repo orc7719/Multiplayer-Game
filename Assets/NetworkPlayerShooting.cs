@@ -7,9 +7,16 @@ public class NetworkPlayerShooting : NetworkBehaviour
 {
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform projectileSpawn;
+    [SerializeField] Transform aimTarget;
     [SerializeField] float projectileForce;
 
-    [SerializeField] Animator anim;
+    [SerializeField] NetworkAnimator networkAnim;
+    NetworkPlayerController playerController;
+
+    private void Start()
+    {
+        playerController = GetComponent<NetworkPlayerController>();
+    }
 
     private void Update()
     {
@@ -18,6 +25,7 @@ public class NetworkPlayerShooting : NetworkBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
+            networkAnim.SetTrigger("Throw");
             CmdShoot();
         }
     }
@@ -25,10 +33,11 @@ public class NetworkPlayerShooting : NetworkBehaviour
     [Command]
     void CmdShoot()
     {
-        anim.SetTrigger("Throw");
-
+        
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
+        projectile.transform.LookAt(aimTarget);
         projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * projectileForce;
+        Physics.IgnoreCollision(projectile.GetComponent<Collider>(), GetComponent<Collider>());
         NetworkServer.Spawn(projectile);
     }
 }

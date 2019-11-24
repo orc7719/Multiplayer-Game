@@ -25,6 +25,9 @@ public class Player : NetworkBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer)
+            return;
+
         if(Input.GetMouseButton(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -60,6 +63,12 @@ public class Player : NetworkBehaviour
     void OnNameChanged(string newName)
     {
 
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player: Player " + playerName + " Dead");
+        DisablePlayer();
     }
 }
 

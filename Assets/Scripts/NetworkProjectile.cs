@@ -15,11 +15,19 @@ public class NetworkProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-
+            NetworkHealth health = collision.gameObject.GetComponent<NetworkHealth>();
+            if(health != null)
+            {
+                health.Damage(100);
+            }
         }
 
         Quaternion hitRotation = Quaternion.FromToRotation(Vector3.forward, collision.contacts[0].normal);
         Instantiate(particlePrefab, collision.contacts[0].point + (collision.contacts[0].normal * 0.05f), hitRotation);
-        Destroy(gameObject);
+        
+        GetComponent<Collider>().enabled = false;
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        
+        Destroy(gameObject, 1);
     }
 }

@@ -10,30 +10,33 @@ public class NetworkPlayerShooting : NetworkBehaviour
     [SerializeField] Transform aimTarget;
     [SerializeField] float projectileForce;
 
-    [SerializeField] NetworkAnimator networkAnim;
-    NetworkPlayerController playerController;
+    [SerializeField] float reloadCooldown = 1f;
+    float reloadTimer;
 
-    private void Start()
-    {
-        playerController = GetComponent<NetworkPlayerController>();
-    }
+    [SerializeField] NetworkAnimator networkAnim;
 
     private void Update()
     {
         if (!isLocalPlayer)
             return;
 
-        if(Input.GetButtonDown("Fire1"))
+        reloadTimer += Time.deltaTime;
+
+        if (Input.GetButtonDown("Fire1"))
         {
-            networkAnim.SetTrigger("Throw");
-            CmdShoot();
+            if (reloadTimer >= reloadCooldown)
+            {
+                reloadTimer = 0;
+                
+                CmdShoot();
+            }
         }
     }
 
     [Command]
     void CmdShoot()
     {
-        
+        networkAnim.SetTrigger("Throw");
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
         projectile.transform.LookAt(aimTarget);
         projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * projectileForce;

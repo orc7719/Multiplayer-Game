@@ -2207,6 +2207,36 @@ Transform:
   m_Father: {fileID: 4857095342913883}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &873626480761900011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281479693926930562}
+  m_Layer: 0
+  m_Name: Projectile Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &281479693926930562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873626480761900011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6677378321399470574}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3005814373532555232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,10 +2264,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3005814373532555232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8, z: 0}
+  m_LocalPosition: {x: 0, y: 1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1031411801}
+  - {fileID: 281479693926930562}
   m_Father: {fileID: 4450754024811881843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2322,6 +2353,7 @@ GameObject:
   - component: {fileID: 3160292318825826533}
   - component: {fileID: 6681583504037336074}
   - component: {fileID: 9049015550114264851}
+  - component: {fileID: 7252555555936773572}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2358,7 +2390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverOnly: 0
-  m_AssetId: b54c519d54781b54eb56737f5b628541
+  m_AssetId: 
   m_SceneId: 0
 --- !u!114 &8699013981798294951
 MonoBehaviour:
@@ -2473,3 +2505,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSensitivity: 5
+--- !u!114 &7252555555936773572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781639981757474755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762e5c3795280c74c866aaa697b9b437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  projectilePrefab: {fileID: 1074762548910340812, guid: 936d1724d22dc80478ae1110ba361437,
+    type: 3}
+  projectileSpawn: {fileID: 281479693926930562}
+  projectileForce: 32
+  anim: {fileID: 95395124991547173}

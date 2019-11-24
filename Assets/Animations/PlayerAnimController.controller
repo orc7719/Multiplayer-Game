@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1107 &-7322363824861886784
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Layer
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
 --- !u!1107 &-6184610572809075440
 AnimatorStateMachine:
   serializedVersion: 5
@@ -62,6 +81,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Throw
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -87,6 +112,18 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: New Layer
+    m_StateMachine: {fileID: -7322363824861886784}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!1102 &3742500868212514429
 AnimatorState:
   serializedVersion: 5
@@ -94,7 +131,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Movement
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -125,7 +162,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: c58f5dee4f294bb4cab11943a6b78c91,
       type: 3}
     m_Threshold: 0
-    m_Position: {x: -2.5, y: 0}
+    m_Position: {x: 2.5, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -134,7 +171,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: f3c8dc23c1b5c8e4caf4402afbbd5838,
       type: 3}
     m_Threshold: 0.125
-    m_Position: {x: 2.5, y: 0}
+    m_Position: {x: -2.5, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -170,7 +207,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: e1379f50f4405f040a3951f4735a1d7f,
       type: 3}
     m_Threshold: 0.625
-    m_Position: {x: -5, y: 0}
+    m_Position: {x: 5, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
@@ -179,7 +216,7 @@ BlendTree:
     m_Motion: {fileID: -203655887218126122, guid: d44142b9a8bc3fc4eb4cb3f855d0e180,
       type: 3}
     m_Threshold: 0.75
-    m_Position: {x: 5, y: 0}
+    m_Position: {x: -5, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend

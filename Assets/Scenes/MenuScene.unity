@@ -1425,6 +1425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Santa
       objectReference: {fileID: 0}
+    - target: {fileID: 1539081041516296, guid: 347a0be0c5f2fd846a2cd6eb737c84da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4118906036946206, guid: 347a0be0c5f2fd846a2cd6eb737c84da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

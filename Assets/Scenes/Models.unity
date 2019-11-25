@@ -465,10 +465,10 @@ PrefabInstance:
       propertyPath: m_SceneId
       value: 587709707
       objectReference: {fileID: 0}
-    - target: {fileID: 137712002919630399, guid: b54c519d54781b54eb56737f5b628541,
+    - target: {fileID: 3798720204836049295, guid: b54c519d54781b54eb56737f5b628541,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54c519d54781b54eb56737f5b628541, type: 3}
@@ -548,11 +548,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8839841429765031280, guid: 936d1724d22dc80478ae1110ba361437,
-        type: 3}
-      propertyPath: m_SceneId
-      value: 3041982441
-      objectReference: {fileID: 0}
     - target: {fileID: 1074762548910340812, guid: 936d1724d22dc80478ae1110ba361437,
         type: 3}
       propertyPath: m_Name
@@ -612,6 +607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8839841429765031280, guid: 936d1724d22dc80478ae1110ba361437,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 3041982441
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 936d1724d22dc80478ae1110ba361437, type: 3}

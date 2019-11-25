@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using UnityEngine.Events;
+using TMPro;
 
 public class Player : NetworkBehaviour
 
@@ -14,6 +15,10 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleRemote;
 
     [SerializeField] float respawnTime = 8f;
+
+    [SerializeField] GameObject respawnParticles;
+    [SerializeField]
+    TMP_Text nameText;
 
     void Start()
     {
@@ -71,7 +76,7 @@ public class Player : NetworkBehaviour
 
     void OnNameChanged(string newName)
     {
-
+        nameText.text = newName;
     }
 
     public void Die()

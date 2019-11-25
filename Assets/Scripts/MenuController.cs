@@ -23,7 +23,10 @@ public class MenuController : MonoBehaviour
 
     public void JoinServer()
     {
-        networkManager.networkAddress = ipInput.text;
-        networkManager.StartClient();
+        if (ipInput.text.Length > 0)
+        {
+            networkManager.networkAddress = ipInput.text;
+            networkManager.StartClient();
+        }
     }
 }

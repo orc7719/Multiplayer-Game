@@ -85,6 +85,13 @@ public class Player : NetworkBehaviour
     void Respawn()
     {
         EnablePlayer();  
+
+        if(isLocalPlayer)
+        {
+            Transform spawn = NetworkManager.singleton.GetStartPosition();
+            transform.position = spawn.position;
+            transform.rotation = spawn.rotation;
+        }
     }
 }
 

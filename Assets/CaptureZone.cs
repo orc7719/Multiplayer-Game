@@ -5,7 +5,9 @@ using Mirror;
 
 public class CaptureZone : NetworkBehaviour
 {
-    [SyncVar(hook = "UpdateZone")]List<Player> playersInZone = new List<Player>();
+    List<Player> playersInZone = new List<Player>();
+
+    [SyncVar(hook = "UpdateZone")] int playerCount = 0;
 
     [SerializeField] GameObject neutralZone;
     [SerializeField] GameObject activeZone;
@@ -41,9 +43,7 @@ public class CaptureZone : NetworkBehaviour
             if (!playersInZone.Contains(newPlayer))
             playersInZone.Add(newPlayer);
 
-        UpdateZone(playersInZone);
-
-        //RpcUpdateZone(playersInZone.Count);
+        RpcUpdateZone(playersInZone.Count);
     }
 
     [ServerCallback]
@@ -55,23 +55,19 @@ public class CaptureZone : NetworkBehaviour
         if (playersInZone.Contains(newPlayer))
             playersInZone.Remove(newPlayer);
 
-        UpdateZone(playersInZone);
-
-        //RpcUpdateZone(playersInZone.Count);
+        RpcUpdateZone(playersInZone.Count);
     }
 
     [ClientRpc]
-    void RpcUpdateZone(int zoneId)
+    void RpcUpdateZone(int totalPlayers)
     {
-        neutralZone.SetActive(zoneId == 0);
-        activeZone.SetActive(zoneId == 1);
-        contestedZone.SetActive(zoneId >= 2);
+        playerCount = totalPlayers;
     }
 
-    void UpdateZone(List<Player> playerList)
+    void UpdateZone(int zonePlayers)
     {
-        neutralZone.SetActive(playerList.Count == 0);
-        activeZone.SetActive(playerList.Count == 1);
-        contestedZone.SetActive(playerList.Count >= 2);
+        neutralZone.SetActive(zonePlayers == 0);
+        activeZone.SetActive(zonePlayers == 1);
+        contestedZone.SetActive(zonePlayers >= 2);
     }
 }

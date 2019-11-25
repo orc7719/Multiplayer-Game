@@ -13,12 +13,14 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleLocal;
     [SerializeField] ToggleEvent onToggleRemote;
 
+    [SerializeField] float respawnTime = 8f;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        DisablePlayer();
+        ResetPlayer();
 
         EnablePlayer();
     }
@@ -38,6 +40,13 @@ public class Player : NetworkBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
+
+    void ResetPlayer()
+    {
+        onToggleShared.Invoke(false);
+            onToggleLocal.Invoke(false);
+            onToggleRemote.Invoke(false);
     }
 
     void EnablePlayer()
@@ -69,6 +78,13 @@ public class Player : NetworkBehaviour
     {
         Debug.Log("Player: Player " + playerName + " Dead");
         DisablePlayer();
+
+        Invoke("Respawn", respawnTime);
+    }
+
+    void Respawn()
+    {
+        EnablePlayer();  
     }
 }
 

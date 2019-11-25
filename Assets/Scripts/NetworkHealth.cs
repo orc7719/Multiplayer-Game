@@ -15,7 +15,7 @@ public class NetworkHealth : NetworkBehaviour
         player = GetComponent<Player>();
     }
 
-    [Server]
+    [ServerCallback]
     private void OnEnable()
     {
         currentHealth = maxHealth;

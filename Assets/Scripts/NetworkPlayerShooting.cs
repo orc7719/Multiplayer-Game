@@ -27,7 +27,7 @@ public class NetworkPlayerShooting : NetworkBehaviour
             if (reloadTimer >= reloadCooldown)
             {
                 reloadTimer = 0;
-                
+                networkAnim.SetTrigger("Throw");
                 CmdShoot();
             }
         }
@@ -36,7 +36,7 @@ public class NetworkPlayerShooting : NetworkBehaviour
     [Command]
     void CmdShoot()
     {
-        networkAnim.SetTrigger("Throw");
+        
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
         projectile.transform.LookAt(aimTarget);
         projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * projectileForce;

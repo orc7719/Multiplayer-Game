@@ -2261,7 +2261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873626480761900011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
+  m_LocalPosition: {x: 0, y: 0.5, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1135297318146137649}
@@ -2310,7 +2310,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3005814373532555232}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -2503,8 +2503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverOnly: 0
-  m_AssetId: 
-  m_SceneId: 1558098470
+  m_AssetId: b54c519d54781b54eb56737f5b628541
+  m_SceneId: 0
 --- !u!114 &8699013981798294951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2522,7 +2522,40 @@ MonoBehaviour:
   playerName: 
   onToggleShared:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3160292318825826533}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6681583504037336074}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7252555555936773572}
+        m_MethodName: set_enabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: ToggleEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onToggleLocal:
     m_PersistentCalls:
@@ -2587,6 +2620,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: ToggleEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  respawnTime: 8
 --- !u!114 &5960254535627763820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,7 +2704,7 @@ MonoBehaviour:
     type: 3}
   projectileSpawn: {fileID: 4397857528447241394}
   aimTarget: {fileID: 281479693926930562}
-  projectileForce: 32
+  projectileForce: 50
   reloadCooldown: 0.25
   networkAnim: {fileID: 4713726762316741584}
 --- !u!114 &4713726762316741584
@@ -2688,7 +2722,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   animator: {fileID: 95395124991547173}
-  clientAuthority: 0
+  clientAuthority: 1
 --- !u!114 &5078434964514765723
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2366,7 +2366,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c79fcfe041c8d144b6438b11d5fab29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ySensitivity: 5
+  ySensitivity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 8cf290b73946a7f4a965c6b688fc51fe, type: 2}
+  uiLocked:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: af8e6064871b4ce4d86809113c0b4384, type: 2}
   maxX: 80
   minX: -80
 --- !u!1 &4261536470443078232
@@ -2685,7 +2692,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1b18cdb7541fe4e8c967f9d438c9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSensitivity: 5
+  xSensitivity:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: 21c4325bae764184c9a9b24d328edc99, type: 2}
+  uiLocked:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: af8e6064871b4ce4d86809113c0b4384, type: 2}
 --- !u!114 &7252555555936773572
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class NetworkPlayerShooting : NetworkBehaviour
 
         reloadTimer += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (reloadTimer >= reloadCooldown)
             {

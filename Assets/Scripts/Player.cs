@@ -17,8 +17,8 @@ public class Player : NetworkBehaviour
     [SerializeField] float respawnTime = 8f;
 
     [SerializeField] GameObject respawnParticles;
-    [SerializeField]
-    TMP_Text nameText;
+    [SerializeField] TMP_Text nameText;
+    [SyncVar(hook = "OnScoreChanged")] public int score;
 
     void Start()
     {
@@ -77,6 +77,11 @@ public class Player : NetworkBehaviour
     void OnNameChanged(string newName)
     {
         nameText.text = newName;
+    }
+
+    void OnScoreChanged(int newScore)
+    {
+
     }
 
     public void Die()

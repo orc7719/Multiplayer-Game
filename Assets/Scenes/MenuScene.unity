@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657558, g: 0.49641156, b: 0.5748166, a: 1}
+  m_IndirectSpecularColor: {r: 0.16788098, g: 0.21073478, b: 0.28993994, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2257,15 +2257,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2318,6 +2318,46 @@ PrefabInstance:
         type: 3}
       propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.91764706
       objectReference: {fileID: 0}
     - target: {fileID: 199764158784229534, guid: 3758ed06cdf471640b0fdccdc74e21df,
         type: 3}
@@ -2854,7 +2894,7 @@ MonoBehaviour:
   onlineScene: GameScene
   transport: {fileID: 1000872126}
   networkAddress: localhost
-  maxConnections: 4
+  maxConnections: 8
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 6781639981757474755, guid: b54c519d54781b54eb56737f5b628541,
     type: 3}

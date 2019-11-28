@@ -9,6 +9,7 @@ public class Player : NetworkBehaviour
 
 {
     [SyncVar(hook = "OnNameChanged")] public string playerName;
+    [SyncVar(hook = "OnColourChanged")] public Color playerColour;
 
     [SerializeField] ToggleEvent onToggleShared;
     [SerializeField] ToggleEvent onToggleLocal;
@@ -28,6 +29,19 @@ public class Player : NetworkBehaviour
         ResetPlayer();
 
         EnablePlayer();
+
+        if (isLocalPlayer)
+            PlayerCanvas.canvas.scoreManager.AddPlayer(this, true);
+    }
+
+    private void OnEnable()
+    {
+        PlayerCanvas.canvas.scoreManager.AddPlayer(this, isLocalPlayer);
+    }
+
+    private void OnDisable()
+    {
+        PlayerCanvas.canvas.scoreManager.RemovePlayer(this, isLocalPlayer);
     }
 
     void Update()
@@ -80,6 +94,12 @@ public class Player : NetworkBehaviour
     }
 
     void OnScoreChanged(int newScore)
+    {
+        if (isLocalPlayer)
+            PlayerCanvas.canvas.UpdatePlayerScore(newScore);
+    }
+
+    void OnColourChanged(Color newColour)
     {
 
     }

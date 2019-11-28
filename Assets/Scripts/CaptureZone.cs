@@ -31,10 +31,17 @@ public class CaptureZone : NetworkBehaviour
             yield return new WaitForSeconds(1f);
 
             if (playersInZone.Count == 1)
+            {
                 playersInZone[0].score++;
-
-            Debug.Log(playersInZone.Count);
+                RpcUpdateScores();
+            }
         }
+    }
+
+    [ClientRpc]
+    void RpcUpdateScores()
+    {
+        PlayerCanvas.canvas.scoreManager.UpdateScores();
     }
 
     [ServerCallback]

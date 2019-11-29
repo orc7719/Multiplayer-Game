@@ -11,4 +11,10 @@ public class LookAtTarget : MonoBehaviour
     {
         transform.LookAt(lookTarget);
     }
+
+    [ContextMenu("Update Rotation")]
+    void UpdateRotation()
+    {
+        transform.LookAt(lookTarget);
+    }
 }

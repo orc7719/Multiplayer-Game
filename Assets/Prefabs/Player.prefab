@@ -936,7 +936,6 @@ Transform:
   - {fileID: 4179240107224793}
   - {fileID: 4224550704493515}
   - {fileID: 4337267097148211}
-  - {fileID: 459376294602265912}
   m_Father: {fileID: 4762794921724797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1013,6 +1012,7 @@ GameObject:
   - component: {fileID: 95395124991547173}
   - component: {fileID: 1539080448549834}
   - component: {fileID: 1539080448549835}
+  - component: {fileID: 782660581431994015}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -1091,13 +1091,13 @@ MonoBehaviour:
     - {fileID: 4119599840433665}
   solvers:
     leftFoot:
-      IKPosition: {x: -0.11444233, y: 0.05862991, z: -0.018944468}
+      IKPosition: {x: 0.71555763, y: 0.05862991, z: -1.8189445}
       IKPositionWeight: 0
       root: {fileID: 4118906496758239}
       target: {fileID: 0}
       IKRotationWeight: 0
       IKRotation: {x: 0.68084204, y: -0.1909297, z: 0.6808419, w: -0.19093026}
-      bendNormal: {x: 0.006547276, y: -0.00020792273, z: 0.0036574383}
+      bendNormal: {x: 0.0065472675, y: -0.00020792313, z: 0.003657435}
       bone1:
         transform: {fileID: 4862296567700281}
         weight: 1
@@ -1134,13 +1134,13 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     rightFoot:
-      IKPosition: {x: 0.11444409, y: 0.058629952, z: -0.018944394}
+      IKPosition: {x: 0.94444406, y: 0.058629952, z: -1.8189443}
       IKPositionWeight: 0
       root: {fileID: 4118906496758239}
       target: {fileID: 0}
       IKRotationWeight: 0
       IKRotation: {x: -0.19092967, y: -0.68084204, z: -0.19093026, w: -0.6808419}
-      bendNormal: {x: 0.0065472526, y: 0.00020792709, z: -0.0036569585}
+      bendNormal: {x: 0.0065472163, y: 0.00020792651, z: -0.0036569817}
       bone1:
         transform: {fileID: 4644878651802599}
         weight: 1
@@ -1177,14 +1177,14 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     leftHand:
-      IKPosition: {x: -0.7996323, y: 1.3638766, z: -0.016244516}
+      IKPosition: {x: 0.030367672, y: 1.3638766, z: -1.8162445}
       IKPositionWeight: 1
       root: {fileID: 4118906496758239}
       target: {fileID: 2042587211}
       IKRotationWeight: 1
       IKRotation: {x: -0.000000029802258, y: 0.000000012539654, z: -0.00000042532972,
         w: -1.0000001}
-      bendNormal: {x: -0.0005606999, y: 0.007733309, z: -0.0079659475}
+      bendNormal: {x: -0.0005607008, y: 0.007733331, z: -0.0079659475}
       bone1:
         transform: {fileID: 4004390528358463}
         weight: 1
@@ -1222,13 +1222,13 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     rightHand:
-      IKPosition: {x: 0.15288223, y: 1.3008159, z: 0.31496128}
+      IKPosition: {x: 0.9828822, y: 1.3008159, z: -1.4850386}
       IKPositionWeight: 1
       root: {fileID: 4118906496758239}
       target: {fileID: 351856108}
       IKRotationWeight: 1
       IKRotation: {x: 0.45214906, y: -0.43465233, z: 0.660704, w: 0.41244277}
-      bendNormal: {x: -0.08169549, y: -0.02430764, z: -0.013427709}
+      bendNormal: {x: -0.0816955, y: -0.024307637, z: -0.013427701}
       bone1:
         transform: {fileID: 4177193920028479}
         weight: 1
@@ -1265,7 +1265,7 @@ MonoBehaviour:
       bendModifierWeight: 1
       bendGoal: {fileID: 0}
     spine:
-      IKPosition: {x: -0.00000027162605, y: 1.1632653, z: 0.011420841}
+      IKPosition: {x: 0.8299997, y: 1.1632653, z: -1.7885791}
       IKPositionWeight: 0
       root: {fileID: 4118906496758239}
       target: {fileID: 0}
@@ -1276,25 +1276,25 @@ MonoBehaviour:
       bones:
       - transform: {fileID: 4175850100337151}
         weight: 1
-        solverPosition: {x: -0.00000011718612, y: 0.981978, z: 0.0024005305}
+        solverPosition: {x: 0.82999986, y: 0.981978, z: -1.7975994}
         solverRotation: {x: 0.4874181, y: -0.5122731, z: 0.48741767, w: -0.51227343}
         defaultLocalPosition: {x: -10.393265, y: 1.3322676e-15, z: 4.6155367e-15}
         defaultLocalRotation: {x: 0.9950197, y: -0.09967895, z: 1.2986438e-15, w: 6.855654e-17}
         length: 0.18151163
         sqrMag: 0
-        axis: {x: -0.18151164, y: -0.00000004619935, z: -0.000000015580524}
+        axis: {x: -0.18151164, y: -0.00000006387262, z: -0.000000039954532}
       - transform: {fileID: 4762794921724797}
         weight: 1
-        solverPosition: {x: -0.00000027162605, y: 1.1632653, z: 0.011420841}
+        solverPosition: {x: 0.8299997, y: 1.1632653, z: -1.7885791}
         solverRotation: {x: -0.46203917, y: 0.5352755, z: 0.4620387, w: -0.5352759}
         defaultLocalPosition: {x: -18.151169, y: 1.5543122e-15, z: -7.1010728e-15}
         defaultLocalRotation: {x: 0.99518615, y: -0.098002784, z: -6.0366487e-16,
           w: -1.2097554e-16}
         length: 0
         sqrMag: 0
-        axis: {x: -0.17802496, y: 0.03540602, z: 0.0000000015490357}
+        axis: {x: -0.17802496, y: 0.035406034, z: 0.000000025923038}
     lookAt:
-      IKPosition: {x: -0.00000027162605, y: 1.1632653, z: 3.0114207}
+      IKPosition: {x: 0.8299997, y: 1.1632653, z: 1.2114209}
       IKPositionWeight: 1
       root: {fileID: 4118906496758239}
       target: {fileID: 1031411801}
@@ -1342,7 +1342,7 @@ MonoBehaviour:
         sqrMag: 0
         axis: {x: 0.000000025079336, y: 0.000000059604513, z: 1}
         baseForwardOffsetEuler: {x: 0, y: 0, z: 0}
-      bodyWeight: 1
+      bodyWeight: 0.54
       headWeight: 1
       eyesWeight: 0
       clampWeight: 0.5
@@ -1415,7 +1415,7 @@ MonoBehaviour:
       transform: {fileID: 4574841718272317}
       target: {fileID: 0}
       positionOffset: {x: 0, y: 0, z: 0}
-      position: {x: -0.000000030156684, y: 0.87921196, z: 0.017929316}
+      position: {x: 0.8299999, y: 0.87921196, z: -1.7820706}
       positionWeight: 0
       rotationOffset: {x: 0, y: 0, z: 0}
       rotation: {x: 0.000049518872, y: 270, z: 278.59283}
@@ -1457,6 +1457,21 @@ MonoBehaviour:
   ik: {fileID: 1539080448549834}
   spineBend: 7
   spineSpeed: 3
+--- !u!114 &782660581431994015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539080448549833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ca8efbb9ca2c345ba6105a87ed3591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rends:
+  - {fileID: 137712002919630399}
+  - {fileID: 654471201769863845}
 --- !u!1 &1542033425166899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,7 +2380,7 @@ Transform:
   - {fileID: 4397857528447241394}
   m_Father: {fileID: 459376294602265912}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 175, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6496916886280521308
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2663,7 +2678,8 @@ GameObject:
   - component: {fileID: 6677378321399470574}
   - component: {fileID: 7106738868210199099}
   - component: {fileID: 9007251600831200892}
-  - component: {fileID: 7830676168107581067}
+  - component: {fileID: 5006212786261206724}
+  - component: {fileID: 5186758357213601697}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2679,11 +2695,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3005814373532555232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.45, z: 0}
+  m_LocalPosition: {x: 0.022, y: 1.611, z: 0.087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1031411801}
   - {fileID: 281479693926930562}
+  - {fileID: 459376294602265912}
   m_Father: {fileID: 4450754024811881843}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2710,7 +2727,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -2738,7 +2755,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3005814373532555232}
   m_Enabled: 0
---- !u!114 &7830676168107581067
+--- !u!114 &5006212786261206724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2760,6 +2777,19 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: af8e6064871b4ce4d86809113c0b4384, type: 2}
   maxX: 80
   minX: -80
+--- !u!114 &5186758357213601697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3005814373532555232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d5e722e8d312f4a8c29da6ef066ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPos: {fileID: 4922478678163203}
 --- !u!1 &4261536470443078232
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,13 +2892,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4321924401259126659}
-  m_LocalRotation: {x: 0.4746515, y: -0.52663976, z: 0.47207105, w: 0.5239328}
-  m_LocalPosition: {x: -15.2, y: -42.1, z: 9.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.017098606, y: -0.0085775275, z: -0.05404094, w: 0.9983555}
+  m_LocalPosition: {x: 0.271, y: -0.122, z: 0.276}
+  m_LocalScale: {x: 0.010000002, y: 0.0100000035, z: 0.010000003}
   m_Children:
   - {fileID: 2842520971740707946}
-  m_Father: {fileID: 4212951465929989}
-  m_RootOrder: 3
+  m_Father: {fileID: 6677378321399470574}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &737233464781726810
 MonoBehaviour:
@@ -2940,7 +2970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   m_AssetId: 
-  m_SceneId: 807256526
+  m_SceneId: 1779642156
 --- !u!114 &8699013981798294951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,7 +3049,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7830676168107581067}
+      - m_Target: {fileID: 5006212786261206724}
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
@@ -3045,7 +3075,7 @@ MonoBehaviour:
   onToggleRemote:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 137712002919630399}
+      - m_Target: {fileID: 782660581431994015}
         m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:

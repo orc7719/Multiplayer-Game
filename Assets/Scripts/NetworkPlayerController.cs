@@ -11,6 +11,7 @@ public class NetworkPlayerController : NetworkBehaviour
 
     CharacterController charController;
     [SerializeField] Animator anim;
+    [SerializeField] Animator firstAnim;
 
     float yVelocity;
     public Vector3 playerVelocity;
@@ -41,6 +42,15 @@ public class NetworkPlayerController : NetworkBehaviour
 
         anim.SetFloat("MoveX", playerVelocity.x);
         anim.SetFloat("MoveZ", playerVelocity.z);
+
+        if(isLocalPlayer)
+            DoFirstPersonAnimation();
+    }
+
+    void DoFirstPersonAnimation()
+    {
+        firstAnim.SetFloat("MoveX", playerVelocity.x);
+        firstAnim.SetFloat("MoveZ", playerVelocity.z);
     }
 
     void DoInteraction()

@@ -28,19 +28,23 @@ public class ScoreManager : MonoBehaviour
             localPlayer = newPlayer;
             Debug.Log("Local Player Added");
         }
+
+        UpdateScores();
     }
     public void RemovePlayer(Player newPlayer, bool isLocal)
+    {
+        if (players.Contains(newPlayer))
+            players.Remove(newPlayer);
+
+        if (isLocal)
         {
-            if (players.Contains(newPlayer))
-                players.Remove(newPlayer);
+            localPlayer = null;
 
-            if (isLocal)
-            {
-                localPlayer = null;
-
-                Debug.Log("Local Player Removed");
-            }
+            Debug.Log("Local Player Removed");
         }
+
+        UpdateScores();
+    }
 
     public void UpdateScores()
     {
@@ -58,6 +62,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            playerScore.UpdateScoreSlider(players.IndexOf(localPlayer), localPlayer.score, "You");
             otherScore.gameObject.SetActive(false);
         }
     }

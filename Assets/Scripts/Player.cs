@@ -21,6 +21,8 @@ public class Player : NetworkBehaviour
     [SerializeField] TMP_Text nameText;
     [SyncVar(hook = "OnScoreChanged")] public int score;
 
+    [SerializeField] GameObject ragdollObject;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

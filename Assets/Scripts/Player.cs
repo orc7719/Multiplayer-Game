@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.Events;
 using TMPro;
+using RootMotion.FinalIK;
 
 public class Player : NetworkBehaviour
 
@@ -106,12 +107,18 @@ public class Player : NetworkBehaviour
 
     }
 
+    [ContextMenu("Kill Player")]
     public void Die()
     {
         Debug.Log("Player: Player " + playerName + " Dead");
+        GameObject newRagdoll = Instantiate(ragdollObject, ragdollObject.transform.position, ragdollObject.transform.rotation);
+        newRagdoll.GetComponent<PlayerRagdoll>().enabled = true;
+
         DisablePlayer();
 
         Invoke("Respawn", respawnTime);
+
+
     }
 
     void Respawn()

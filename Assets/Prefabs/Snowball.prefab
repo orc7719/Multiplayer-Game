@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3939764121522918455}
   - component: {fileID: 5474085933579824641}
   - component: {fileID: 1786615462494671608}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 833136389291938841}
   - component: {fileID: -8772794392608802675}
   - component: {fileID: -6419134469875063291}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Snowball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   m_AssetId: 
-  m_SceneId: 3641404030
+  m_SceneId: 1033416365
 --- !u!54 &-7706299720323381911
 Rigidbody:
   m_ObjectHideFlags: 0

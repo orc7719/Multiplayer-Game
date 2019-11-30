@@ -1544,6 +1544,7 @@ MonoBehaviour:
   jumpHeight: 5
   gravity: 12
   anim: {fileID: 255711282}
+  firstAnim: {fileID: 0}
   playerVelocity: {x: 0.000000050717073, y: -1.0448541e-10, z: -0.0000545325}
 --- !u!114 &589300900
 MonoBehaviour:
@@ -1691,6 +1692,7 @@ MonoBehaviour:
   respawnParticles: {fileID: 0}
   nameText: {fileID: 0}
   score: 8
+  ragdollObject: {fileID: 0}
 --- !u!114 &589300902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3684,6 +3686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SceneId
       value: 587709707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4860678454902074448, guid: b54c519d54781b54eb56737f5b628541,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3798720204836049295, guid: b54c519d54781b54eb56737f5b628541,
         type: 3}

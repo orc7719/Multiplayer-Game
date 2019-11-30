@@ -64,6 +64,7 @@ namespace RootMotion.FinalIK {
 
 		#endregion Main Interface
 
+        [System.Serializable]
 		// The rigidbodies and their associates
 		public class Rigidbone {
 			public Rigidbody r;

@@ -18,7 +18,7 @@ public class NetworkProjectile : MonoBehaviour
             NetworkHealth health = collision.gameObject.GetComponent<NetworkHealth>();
             if(health != null)
             {
-                health.Damage(100);
+                health.Damage(100, collision.contacts[0].point);
             }
         }
 

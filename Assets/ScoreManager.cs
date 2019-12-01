@@ -60,7 +60,7 @@ public class ScoreManager : MonoBehaviour
 
             scoresAnim.SetBool("PlayerLead", localPlayer.score > otherPlayer.score);
         }
-        else
+        else if(localPlayer != null)
         {
             playerScore.UpdateScoreSlider(players.IndexOf(localPlayer), localPlayer.score, "You");
             otherScore.gameObject.SetActive(false);

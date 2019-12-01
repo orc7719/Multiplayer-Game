@@ -10,10 +10,6 @@ public class PlayerRagdoll : MonoBehaviour
 
     [SerializeField] RagdollUtility ragdoll;
 
-    Vector3 hitPoint;
-
-    [SerializeField] Rigidbody[] rigidbodies;
-
     private void OnEnable()
     {
         for (int i = 0; i < disableScripts.Length; i++)
@@ -25,15 +21,9 @@ public class PlayerRagdoll : MonoBehaviour
         {
             enableScripts[i].enabled = true;
         }
-        rigidbodies = GetComponentsInChildren<Rigidbody>();
         StartCoroutine(EnableRagdoll());
 
         
-    }
-
-    public void AddHitPoint(Vector3 damagePoint)
-    {
-        hitPoint = damagePoint;
     }
 
     IEnumerator EnableRagdoll()
@@ -42,10 +32,5 @@ public class PlayerRagdoll : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         ragdoll.EnableRagdoll();
-
-        for (int i = 0; i < rigidbodies.Length; i++)
-        {
-            rigidbodies[i].AddExplosionForce(200.0f, hitPoint, 5.0f, 3.0f);
-        }
     }
 }

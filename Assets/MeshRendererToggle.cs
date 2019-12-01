@@ -17,6 +17,7 @@ public class MeshRendererToggle : MonoBehaviour
     {
         for (int i = 0; i < rends.Length; i++)
         {
+            if(rends[i] != null)
             rends[i].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
         }
     }

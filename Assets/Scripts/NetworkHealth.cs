@@ -22,21 +22,21 @@ public class NetworkHealth : NetworkBehaviour
     }
 
     [Server]
-    public void Damage(int value, Vector3 damagePoint)
+    public void Damage(int value)
     {
         bool isDead = false;
 
         currentHealth -= value;
         isDead = currentHealth <= 0;
 
-        RpcTakeDamage(isDead, damagePoint);
+        RpcTakeDamage(isDead);
     }
 
     [ClientRpc]
-    void RpcTakeDamage(bool dead, Vector3 damagePoint)
+    void RpcTakeDamage(bool dead)
     {
         if (dead)
-            player.Die(damagePoint);
+            player.Die();
     }
 
     void OnHealthChanged(int newHealth)

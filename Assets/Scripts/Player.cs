@@ -108,12 +108,11 @@ public class Player : NetworkBehaviour
     }
 
     [ContextMenu("Kill Player")]
-    public void Die(Vector3 damagePoint)
+    public void Die()
     {
         Debug.Log("Player: Player " + playerName + " Dead");
         GameObject newRagdoll = Instantiate(ragdollObject, ragdollObject.transform.position, ragdollObject.transform.rotation);
         newRagdoll.GetComponent<PlayerRagdoll>().enabled = true;
-        newRagdoll.GetComponent<PlayerRagdoll>().AddHitPoint(damagePoint);
 
         DisablePlayer();
 

@@ -29122,7 +29122,7 @@ GameObject:
   - component: {fileID: 8415412316791833575}
   - component: {fileID: 2879213588786511646}
   - component: {fileID: 4482981296354228442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Xmas_Tree_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29285,8 +29285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverOnly: 0
-  m_AssetId: 
-  m_SceneId: 583569185
+  m_AssetId: 2785bff360117e34790e416bc5ff13ad
+  m_SceneId: 0
 --- !u!1 &7187215653429280635
 GameObject:
   m_ObjectHideFlags: 0
@@ -29299,7 +29299,7 @@ GameObject:
   - component: {fileID: 2935856477478238046}
   - component: {fileID: 8899896274834508711}
   - component: {fileID: 4484987424361954664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Xmas_Tree_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

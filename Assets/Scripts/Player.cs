@@ -24,22 +24,25 @@ public class Player : NetworkBehaviour
 
     [SerializeField] GameObject ragdollObject;
 
+    GameObject mainCamera;
+
+    bool isAlive;
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         ResetPlayer();
 
-        EnablePlayer();
-
         if (isLocalPlayer)
+        {
             PlayerCanvas.canvas.scoreManager.AddPlayer(this, true);
+            mainCamera = Camera.main.gameObject;
+        }
     }
 
     private void OnEnable()
     {
         PlayerCanvas.canvas.scoreManager.AddPlayer(this, isLocalPlayer);
+        
     }
 
     private void OnDisable()
@@ -52,16 +55,20 @@ public class Player : NetworkBehaviour
         if (!isLocalPlayer)
             return;
 
-        if(Input.GetMouseButton(0))
+        if (isAlive)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            if (Input.GetMouseButton(0))
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+    
     }
 
     void ResetPlayer()
@@ -71,24 +78,52 @@ public class Player : NetworkBehaviour
             onToggleRemote.Invoke(false);
     }
 
+    [Command]
+    public void CmdSpawnPlayer()
+    {
+        EnablePlayer();
+    }
+
     void EnablePlayer()
     {
+        isAlive = true;
+
         onToggleShared.Invoke(true);
 
         if (isLocalPlayer)
+        {
             onToggleLocal.Invoke(true);
+            mainCamera.SetActive(false);
+        }
         else
             onToggleRemote.Invoke(true);
     }
 
     void DisablePlayer()
     {
+        isAlive = false;
         onToggleShared.Invoke(false);
 
         if (isLocalPlayer)
+        {
             onToggleLocal.Invoke(false);
+            mainCamera.SetActive(true);
+        }
         else
             onToggleRemote.Invoke(false);
+    }
+
+    public void ChangeName(string newName)
+    {
+        string localName = newName; //Used for checking name before sending to server
+
+        CmdChangeName(localName);
+    }
+
+    [Command]
+    void CmdChangeName(string newName)
+    {
+        playerName = newName;
     }
 
     void OnNameChanged(string newName)

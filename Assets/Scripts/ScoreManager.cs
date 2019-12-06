@@ -19,14 +19,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddPlayer(Player newPlayer, bool isLocal)
     {
-        Debug.Log("Adding Player, is local? : " + isLocal);
         if (!players.Contains(newPlayer))
             players.Add(newPlayer);
 
         if (isLocal)
         {
             localPlayer = newPlayer;
-            Debug.Log("Local Player Added");
         }
 
         UpdateScores();
@@ -39,8 +37,6 @@ public class ScoreManager : MonoBehaviour
         if (isLocal)
         {
             localPlayer = null;
-
-            Debug.Log("Local Player Removed");
         }
 
         UpdateScores();

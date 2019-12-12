@@ -27,7 +27,7 @@ public class NetworkPlayerShooting : NetworkBehaviour
             if (reloadTimer >= reloadCooldown)
             {
                 reloadTimer = 0;
-                networkAnim.SetTrigger("Throw");
+                networkAnim.SetTrigger("Shoot");
                 CmdShoot();
             }
         }

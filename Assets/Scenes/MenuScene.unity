@@ -5387,7 +5387,7 @@ MonoBehaviour:
   serverTickRate: 64
   showDebugMessages: 0
   offlineScene: MenuScene
-  onlineScene: Demo 1
+  onlineScene: GameScene
   transport: {fileID: 1000872126}
   networkAddress: localhost
   maxConnections: 8

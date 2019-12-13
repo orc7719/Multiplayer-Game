@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 381153338873530554}
   - component: {fileID: 8651738476381598348}
   - component: {fileID: 3111335492684484213}
+  - component: {fileID: 3489997861573387840}
   m_Layer: 0
   m_Name: SM_Xmas_Present_Preset_05
   m_TagString: Untagged
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3489997861573387840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679855591147453097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.58525485, y: 0.24454296, z: 0.4246025}
+  m_Center: {x: -0.0014411509, y: -0.0057512075, z: 0.00079179555}

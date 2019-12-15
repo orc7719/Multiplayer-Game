@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2810575023845413817}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.25, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 50}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 200}
   m_Children: []
   m_Father: {fileID: 6509840106900827101}
   m_RootOrder: 5
@@ -29287,7 +29287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   m_AssetId: 
-  m_SceneId: 3881207926
+  m_SceneId: 2486954755
 --- !u!1 &7187215653429280635
 GameObject:
   m_ObjectHideFlags: 0
@@ -43953,12 +43953,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013620029022, guid: a95cb6b4e170fc8449a186e245d254e6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013620029022, guid: a95cb6b4e170fc8449a186e245d254e6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013620029022, guid: a95cb6b4e170fc8449a186e245d254e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4000013620029022, guid: a95cb6b4e170fc8449a186e245d254e6, type: 3}
       propertyPath: m_LocalScale.z

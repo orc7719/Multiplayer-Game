@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 831101536}
   - component: {fileID: 831101537}
-  m_Layer: 13
+  m_Layer: 8
   m_Name: Player Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &831101536
 Transform:
@@ -42,7 +42,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.5, y: 20, z: 1}
+  m_Size: {x: 7.5, y: 20, z: 1.4}
   m_Center: {x: 0, y: 10, z: 0}
 --- !u!1 &8747304864248021499
 GameObject:
@@ -56,12 +56,12 @@ GameObject:
   - component: {fileID: 8724065911365392077}
   - component: {fileID: 8734327471227215383}
   - component: {fileID: 613369885897500061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &8748544717503780311
 Transform:
@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 8747304864248021499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.965822, y: 0.028645992, z: 25.229048}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.6, y: 0.8, z: 0.6}
   m_Children:
   - {fileID: 831101536}
   m_Father: {fileID: 0}

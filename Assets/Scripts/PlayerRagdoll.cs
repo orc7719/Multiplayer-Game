@@ -32,5 +32,20 @@ public class PlayerRagdoll : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         ragdoll.EnableRagdoll();
+
+        yield return new WaitForSeconds(5f);
+
+        Rigidbody[] rgdbodies = GetComponentsInChildren<Rigidbody>();
+        for (int i = 0; i < rgdbodies.Length; i++)
+        {
+            rgdbodies[i].useGravity = false;
+        }
+
+        int randomBody = Random.Range(0, rgdbodies.Length);
+
+        ConstantForce bodyForce = rgdbodies[randomBody].gameObject.AddComponent<ConstantForce>();
+        bodyForce.force = new Vector3(0, 5, 0);
+
+        Destroy(gameObject, 30f);
     }
 }

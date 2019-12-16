@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 833136389291938841}
   - component: {fileID: -8772794392608802675}
   - component: {fileID: -6419134469875063291}
+  - component: {fileID: 6336290503351455978}
   m_Layer: 12
   m_Name: Snowball
   m_TagString: Untagged
@@ -127,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serverOnly: 0
-  m_AssetId: 
-  m_SceneId: 1033416365
+  m_AssetId: 936d1724d22dc80478ae1110ba361437
+  m_SceneId: 0
 --- !u!54 &-7706299720323381911
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,3 +188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 991292229370205204, guid: 773352e6d2830cb41b99b4e6d4b463c2,
     type: 3}
+--- !u!114 &6336290503351455978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074762548910340812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b50e69454d7aa8498944c860983e0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 25

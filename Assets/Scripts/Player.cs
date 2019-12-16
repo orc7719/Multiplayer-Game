@@ -151,21 +151,25 @@ public class Player : NetworkBehaviour
 
         DisablePlayer();
 
-        Invoke("Respawn", respawnTime);
+        StartCoroutine(Respawn());
 
-
+        //Invoke("Respawn", respawnTime);
     }
 
-    void Respawn()
+    IEnumerator Respawn()
     {
-        EnablePlayer();  
+        yield return new WaitForSeconds(respawnTime);
 
-        if(isLocalPlayer)
+        if (isLocalPlayer)
         {
             Transform spawn = NetworkManager.singleton.GetStartPosition();
             transform.position = spawn.position;
             transform.rotation = spawn.rotation;
         }
+
+        yield return null;
+
+        EnablePlayer();  
     }
 }
 

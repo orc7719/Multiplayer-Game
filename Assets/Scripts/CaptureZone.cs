@@ -24,17 +24,33 @@ public class CaptureZone : NetworkBehaviour
     }
 
     [Server]
+    private void FixedUpdate()
+    {
+        playersInZone.Clear();
+    }
+
+    [Server]
     IEnumerator DoCaptureTick()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f);
-
+            RpcUpdateZone(playersInZone.Count);
             if (playersInZone.Count == 1)
             {
                 playersInZone[0].score++;
+                if (playersInZone[0].score >= 100)
+                    EndGame(playersInZone[0].playerName);
                 RpcUpdateScores();
             }
+        }
+    }
+
+    void EndGame(string playerName)
+    {
+        for (int i = 0; i < PlayerCanvas.canvas.scoreManager.players.Count; i++)
+        {
+            PlayerCanvas.canvas.scoreManager.players[i].RpcGameOver(playerName);
         }
     }
 
@@ -44,6 +60,7 @@ public class CaptureZone : NetworkBehaviour
         PlayerCanvas.canvas.scoreManager.UpdateScores();
     }
 
+    /**
     [ServerCallback]
     void OnTriggerEnter(Collider other)
     {
@@ -55,7 +72,20 @@ public class CaptureZone : NetworkBehaviour
 
         RpcUpdateZone(playersInZone.Count);
     }
+    **/
 
+    [ServerCallback]
+
+    private void OnTriggerStay(Collider other)
+    {
+        Player newPlayer = other.GetComponent<Player>();
+
+        if (newPlayer != null)
+            if (!playersInZone.Contains(newPlayer))
+                playersInZone.Add(newPlayer);
+    }
+
+    /**
     [ServerCallback]
     void OnTriggerExit(Collider other)
     {
@@ -67,6 +97,7 @@ public class CaptureZone : NetworkBehaviour
 
         RpcUpdateZone(playersInZone.Count);
     }
+    **/
 
     [ClientRpc]
     void RpcUpdateZone(int totalPlayers)

@@ -17,6 +17,9 @@ public class PlayerCanvas : MonoBehaviour
 
     public TMP_InputField nameInput;
 
+    public TMP_Text winnerText;
+    public GameObject winnerHolder;
+
     private void Start()
     {
         if (canvas == null)
@@ -48,5 +51,11 @@ public class PlayerCanvas : MonoBehaviour
     {
         joinMenu.SetActive(false);
         scoreManager.localPlayer.CmdSpawnPlayer();
+    }
+
+    public void ShowWinner(string winnerName)
+    {
+        winnerText.text = winnerName + " Wins!";
+        winnerHolder.SetActive(true);
     }
 }

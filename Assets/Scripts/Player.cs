@@ -26,6 +26,8 @@ public class Player : NetworkBehaviour
 
     GameObject mainCamera;
 
+    public static List<Player> players = new List<Player>();
+
     bool isAlive;
 
     void Start()
@@ -158,6 +160,8 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
+        transform.position = Vector3.zero;
+
         yield return new WaitForSeconds(respawnTime);
 
         if (isLocalPlayer)
@@ -170,6 +174,20 @@ public class Player : NetworkBehaviour
         yield return null;
 
         EnablePlayer();  
+    }
+
+    [ClientRpc]
+    public void RpcGameOver(string winningPlayer)
+    {
+        DisablePlayer();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (isLocalPlayer)
+        {
+            PlayerCanvas.canvas.ShowWinner(winningPlayer);
+        }
     }
 }
 

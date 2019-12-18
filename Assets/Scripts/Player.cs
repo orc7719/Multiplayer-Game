@@ -9,20 +9,32 @@ using RootMotion.FinalIK;
 public class Player : NetworkBehaviour
 
 {
+    [Header("Player Info")]
     [SyncVar(hook = "OnNameChanged")] public string playerName;
-    [SyncVar(hook = "OnColourChanged")] public Color playerColour;
+    [SyncVar(hook = "OnColourChanged")] public int colourID;
+    [SyncVar(hook = "OnMaskChanged")] public int maskID;
 
+    [Header("Toggle Events")]
     [SerializeField] ToggleEvent onToggleShared;
     [SerializeField] ToggleEvent onToggleLocal;
     [SerializeField] ToggleEvent onToggleRemote;
 
     [SerializeField] float respawnTime = 8f;
 
+    [Header("Player Components")]
     [SerializeField] GameObject respawnParticles;
     [SerializeField] TMP_Text nameText;
     [SyncVar(hook = "OnScoreChanged")] public int score;
 
     [SerializeField] GameObject ragdollObject;
+
+    [Header("Player Visuals")]
+    [SerializeField] Material[] playerMats;
+    [SerializeField] Renderer[] playerRenderers;
+
+    [Header("Player Audio")]
+    [SerializeField] AudioSource playerAudio;
+    [SerializeField] AudioClip[] deathSounds;
 
     GameObject mainCamera;
 
@@ -156,7 +168,15 @@ public class Player : NetworkBehaviour
             PlayerCanvas.canvas.UpdatePlayerScore(newScore);
     }
 
-    void OnColourChanged(Color newColour)
+    void OnColourChanged(int newColour)
+    {
+        for (int i = 0; i < playerRenderers.Length; i++)
+        {
+            playerRenderers[i].material = playerMats[newColour];
+        }
+    }
+
+    void OnMaskChanged(int newMask)
     {
 
     }
@@ -168,11 +188,12 @@ public class Player : NetworkBehaviour
         GameObject newRagdoll = Instantiate(ragdollObject, ragdollObject.transform.position, ragdollObject.transform.rotation);
         newRagdoll.GetComponent<PlayerRagdoll>().enabled = true;
 
+        if (isLocalPlayer)
+            playerAudio.PlayOneShot(deathSounds[Random.Range(0, deathSounds.Length)]);
+
         DisablePlayer();
 
         StartCoroutine(Respawn());
-
-        //Invoke("Respawn", respawnTime);
     }
 
     IEnumerator Respawn()

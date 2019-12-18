@@ -15,6 +15,9 @@ public class NetworkPlayerShooting : NetworkBehaviour
 
     [SerializeField] NetworkAnimator networkAnim;
 
+    [SerializeField] AudioSource weaponAudio;
+    [SerializeField] AudioClip[] shootingSounds;
+
     private void Update()
     {
         if (!isLocalPlayer)
@@ -29,6 +32,9 @@ public class NetworkPlayerShooting : NetworkBehaviour
                 reloadTimer = 0;
                 networkAnim.SetTrigger("Shoot");
                 CmdShoot(projectileSpawn.position, projectileSpawn.rotation, aimTarget.position);
+
+                weaponAudio.pitch = Random.Range(0.85f, 0.95f);
+                weaponAudio.PlayOneShot(shootingSounds[Random.Range(0, shootingSounds.Length)]);
             }
         }
     }

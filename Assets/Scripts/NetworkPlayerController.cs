@@ -5,13 +5,22 @@ using Mirror;
 
 public class NetworkPlayerController : NetworkBehaviour
 {
-    [SerializeField] float moveSpeed = 5;
+    [SerializeField] float moveSpeed = 4;
+    [SerializeField] float sprintSpeed = 6;
     [SerializeField] float jumpHeight = 5;
     [SerializeField] float gravity = 12;
 
     CharacterController charController;
     [SerializeField] Animator anim;
     [SerializeField] Animator firstAnim;
+
+    [SerializeField] AudioSource playerAudio;
+    [SerializeField] AudioClip[] jumpSounds;
+
+    [SerializeField] AudioSource footstepAudio;
+    [SerializeField] AudioClip[] footstepSounds;
+    [SerializeField] float footstepCooldown;
+    float footstepTimer;
 
     float yVelocity;
     public Vector3 playerVelocity;
@@ -43,6 +52,19 @@ public class NetworkPlayerController : NetworkBehaviour
         anim.SetFloat("MoveX", playerVelocity.x);
         anim.SetFloat("MoveZ", playerVelocity.z);
 
+        if (footstepTimer >= footstepCooldown)
+        {
+            footstepAudio.pitch = Random.Range(0.9f, 1.1f);
+            footstepAudio.PlayOneShot(footstepSounds[Random.Range(0, footstepSounds.Length)]);
+            footstepTimer = 0f;
+        }
+
+        if (charController.isGrounded)
+            footstepTimer += charVelocity.magnitude * Time.deltaTime;
+        else
+            footstepTimer = footstepCooldown - 1f;
+        Debug.Log("Footsteps: " + footstepTimer);
+
         if(isLocalPlayer)
             DoFirstPersonAnimation();
     }
@@ -65,16 +87,17 @@ public class NetworkPlayerController : NetworkBehaviour
 
         Vector3 move = new Vector3(h, 0, v);
         move = transform.TransformDirection(move);
-        move *= moveSpeed;
+        move *= Input.GetButton("Sprint") ? sprintSpeed : moveSpeed;
 
-        //if (h != 0 && v != 0)
-        //    move *= 0.7f;
+        if (h != 0 && v != 0)
+            move *= 0.7f;
 
         if(charController.isGrounded)
         {
             if(Input.GetButtonDown("Jump"))
             {
                 yVelocity = jumpHeight;
+                playerAudio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.Length)]);
             }
         }
         else

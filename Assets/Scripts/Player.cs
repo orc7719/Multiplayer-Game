@@ -26,6 +26,8 @@ public class Player : NetworkBehaviour
 
     GameObject mainCamera;
 
+    bool playerSetup = false;
+
     public static List<Player> players = new List<Player>();
 
     bool isAlive;
@@ -33,11 +35,11 @@ public class Player : NetworkBehaviour
     void Start()
     {
         ResetPlayer();
+        EnablePlayer();
 
         if (isLocalPlayer)
         {
-            PlayerCanvas.canvas.scoreManager.AddPlayer(this, true);
-            mainCamera = Camera.main.gameObject;
+
         }
     }
 
@@ -56,6 +58,15 @@ public class Player : NetworkBehaviour
     {
         if (!isLocalPlayer)
             return;
+
+        if(!playerSetup)
+        {
+            Debug.Log("Set Local Player");
+            PlayerCanvas.canvas.scoreManager.AddPlayer(this, true);
+            mainCamera = Camera.main.gameObject;
+            DisablePlayer();
+            playerSetup = true;
+        }
 
         if (isAlive)
         {
@@ -82,6 +93,12 @@ public class Player : NetworkBehaviour
 
     [Command]
     public void CmdSpawnPlayer()
+    {
+        RpcSpawnPlayer();
+    }
+
+    [ClientRpc]
+    public void RpcSpawnPlayer()
     {
         EnablePlayer();
     }
@@ -187,7 +204,15 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer)
         {
             PlayerCanvas.canvas.ShowWinner(winningPlayer);
+            StartCoroutine(PlayerDisconnect());
         }
+    }
+
+    IEnumerator PlayerDisconnect()
+    {
+        yield return new WaitForSeconds(5f);
+
+        NetworkManager.singleton.StopClient();
     }
 }
 

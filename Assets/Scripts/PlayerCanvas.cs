@@ -51,6 +51,9 @@ public class PlayerCanvas : MonoBehaviour
     {
         joinMenu.SetActive(false);
         scoreManager.localPlayer.CmdSpawnPlayer();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ShowWinner(string winnerName)

@@ -13,9 +13,9 @@ public class NetworkProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.transform.root.tag == "Player")
         {
-            NetworkHealth health = collision.gameObject.GetComponent<NetworkHealth>();
+            NetworkHealth health = collision.transform.root.GetComponent<NetworkHealth>();
             if(health != null)
             {
                 health.Damage(100);

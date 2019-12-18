@@ -28,17 +28,17 @@ public class NetworkPlayerShooting : NetworkBehaviour
             {
                 reloadTimer = 0;
                 networkAnim.SetTrigger("Shoot");
-                CmdShoot();
+                CmdShoot(projectileSpawn.position, projectileSpawn.rotation, aimTarget.position);
             }
         }
     }
 
     [Command]
-    void CmdShoot()
+    void CmdShoot(Vector3 shootPos, Quaternion shootRot, Vector3 shootTarget)
     {
         
-        GameObject projectile = Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation);
-        projectile.transform.LookAt(aimTarget);
+        GameObject projectile = Instantiate(projectilePrefab, shootPos, shootRot);
+        projectile.transform.LookAt(shootTarget);
         projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * projectileForce;
         Physics.IgnoreCollision(projectile.GetComponent<Collider>(), GetComponent<Collider>());
         NetworkServer.Spawn(projectile);

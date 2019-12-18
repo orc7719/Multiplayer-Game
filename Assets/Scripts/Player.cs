@@ -177,10 +177,6 @@ public class Player : NetworkBehaviour
 
     IEnumerator Respawn()
     {
-        transform.position = Vector3.zero;
-
-        yield return new WaitForSeconds(respawnTime);
-
         if (isLocalPlayer)
         {
             Transform spawn = NetworkManager.singleton.GetStartPosition();
@@ -188,7 +184,7 @@ public class Player : NetworkBehaviour
             transform.rotation = spawn.rotation;
         }
 
-        yield return null;
+        yield return new WaitForSeconds(respawnTime);
 
         EnablePlayer();  
     }

@@ -2236,7 +2236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &390747975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2251,10 +2251,10 @@ RectTransform:
   m_Father: {fileID: 1700295499}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 22}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: -69.08333}
+  m_SizeDelta: {x: 210, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390747976
 MonoBehaviour:
@@ -4139,7 +4139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.08
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4147,7 +4147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.78
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 4882518836412242, guid: 3758ed06cdf471640b0fdccdc74e21df, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4209,12 +4209,12 @@ PrefabInstance:
     - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
         type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
         type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 45.70264
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 198940010365373708, guid: 3758ed06cdf471640b0fdccdc74e21df,
         type: 3}
@@ -5417,7 +5417,7 @@ MonoBehaviour:
   onlineScene: GameScene
   transport: {fileID: 1000872126}
   networkAddress: localhost
-  maxConnections: 8
+  maxConnections: 16
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 6781639981757474755, guid: b54c519d54781b54eb56737f5b628541,
     type: 3}

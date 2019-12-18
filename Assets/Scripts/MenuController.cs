@@ -29,4 +29,9 @@ public class MenuController : MonoBehaviour
             networkManager.StartClient();
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

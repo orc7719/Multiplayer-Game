@@ -52,18 +52,21 @@ public class NetworkPlayerController : NetworkBehaviour
         anim.SetFloat("MoveX", playerVelocity.x);
         anim.SetFloat("MoveZ", playerVelocity.z);
 
-        if (footstepTimer >= footstepCooldown)
-        {
-            footstepAudio.pitch = Random.Range(0.9f, 1.1f);
-            footstepAudio.PlayOneShot(footstepSounds[Random.Range(0, footstepSounds.Length)]);
-            footstepTimer = 0f;
-        }
+
 
         if (charController.isGrounded)
+        {
+            if (footstepTimer >= footstepCooldown)
+            {
+                footstepAudio.pitch = Random.Range(0.9f, 1.1f);
+                footstepAudio.PlayOneShot(footstepSounds[Random.Range(0, footstepSounds.Length)]);
+                footstepTimer = 0f;
+            }
+
             footstepTimer += charVelocity.magnitude * Time.deltaTime;
+        }
         else
-            footstepTimer = footstepCooldown - 1f;
-        Debug.Log("Footsteps: " + footstepTimer);
+            footstepTimer = footstepCooldown;
 
         if(isLocalPlayer)
             DoFirstPersonAnimation();

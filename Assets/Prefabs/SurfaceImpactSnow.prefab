@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5221615564943697606}
   - component: {fileID: 5273151256791275801}
   - component: {fileID: 3352251900535834897}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SurfaceImpactSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4959,7 +4959,7 @@ GameObject:
   - component: {fileID: 993391936261066634}
   - component: {fileID: 1082461775895803970}
   - component: {fileID: 1081229642291960410}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Dirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
